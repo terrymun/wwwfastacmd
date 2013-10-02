@@ -1,45 +1,23 @@
-===============================================================================
-== wwwfastacmd                                                               ==
-===============================================================================
+# wwwfastacmd
 
-wwwfastacmd are four files to add to wwblast NCBI tool, to be able to use
-fastacmd through a web interface, in other words, to be able to retrieve
-a sequence from a blastdb based in its ID.
+## 1. Introduction
+The fastacmd tool was developed by Aureliano Bombarely to interface with NCBI's wwwblast directly. However, in my project, I was tasked to implement this tool separately from BLAST. Since I am maintaining an intranet site on an Apache server, I have decided to use PHP to interface with the wwwfastacmd script (`fastacmd.cgi`) directly.
 
-This web interface use the same strcuture than wwwblast. It has two important 
-files:
+The code has been updated to be HTML5 compliant.
 
-  * fastacmd.html, with the form to submit the query.
+## 2. File list
+* fastacmd.php
+* fastacmd.cgi
+* fastacmd-exec.php
+* fastacmd-form.php
 
-  * fastacmd.cgi, with all the code to check the submitted data and 
-    the line to executate the fastacmd. It is performed using `STRING`
-    (http://perldoc.perl.org/perlop.html#%60STRING%60), instead system
-    to avoid the creation of any temp file. The output is directly redirect
-    to a perl variable and printed with the cgi script. 
+You should note that there are no stylesheet provided. You can style the output in any way you want.
 
+## 3. Installation instruction
+1. Download the files. You can place the files anywhere on your server.
+2. You will have to know where the BLAST executables are installed in your system. You will need the path to the blast executables (`/path/to/blast/bin`) so that you can set the environment in the CGI script.
+3. Add the list of databases that you want to include in your fastacmd in `fastacmd-form.php`, for example:
 
-Installation and configuration:
-===============================
-
-1) Follow the instructions to install and configure NCBI wwwblast.
-   (http://www.ncbi.nlm.nih.gov/staff/tao/URLAPI/wwwblast/)
-
-2) Download the wwwfastacmd files and copy the following files in the 
-   locations:
-
-   fastacmd.html      => /blast
-   fastacmd.cgi       => /blast
-   fastacmd_help.html => /blast/docs
-   fastacmd_form.gif  => /blast/images
-
- 3) Replace index.html with the index.html from the wwwfastacmd files.
-
- 4) Open fastacmd.html, add any blastdb in the section:
-    <select name="DATALIB">
-        <option VALUE = "blastdb_localization"> blastdb name
+    <select id="seqret-db" name="db">
+        <option value="[database_name.fa]">Database description</option>
     </select>
-
- 5) Check that the files are readables for anyone.
-
-
-
