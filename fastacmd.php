@@ -9,14 +9,14 @@
 <html lang="en">
 <head>
 	<title>wwwfastacmd Tool</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body class="fastacmd">
-    <header>
-        <h1>wwwfastacmd Tool</h1>
-    </header>
+	<header>
+		<h1>wwwfastacmd Tool</h1>
+	</header>
 
 	<section>
 		<h2>Sequence Retrieval Tool (SeqRet)</h2>
