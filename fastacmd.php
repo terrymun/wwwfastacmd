@@ -1,4 +1,5 @@
 <?php
+	// Start session
 	session_start();
 	
 	// Please check if the path is correct — may be problematic if you are installing your site in a sub-directory instead of in root
