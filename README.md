@@ -23,3 +23,5 @@ You should note that there are no stylesheet provided. You can style the output 
     <option value="[database_name.fa]">Database description</option>
 </select>
 ```
+
+4. Update the absolute path to `fastacmd.cgi` in `fastacmd-exec.php`. The absolute path is required by PHP `exec()` function to run the CGI file.
