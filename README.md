@@ -18,6 +18,8 @@ You should note that there are no stylesheet provided. You can style the output 
 2. You will have to know where the BLAST executables are installed in your system. You will need the path to the blast executables (`/path/to/blast/bin`) so that you can set the environment in the CGI script.
 3. Add the list of databases that you want to include in your fastacmd in `fastacmd-form.php`, for example:
 
-    <select id="seqret-db" name="db">
-        <option value="[database_name.fa]">Database description</option>
-    </select>
+```
+<select id="seqret-db" name="db">
+    <option value="[database_name.fa]">Database description</option>
+</select>
+```
