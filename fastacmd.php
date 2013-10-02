@@ -16,11 +16,11 @@
 <body class="fastacmd">
 	<header>
 		<h1>wwwfastacmd Tool</h1>
+		        <p>The <a href="https://github.com/aubombarely/wwwfastacmd">wwwfastacmd project</a> developed by Aureliano Bombarely.</p>
 	</header>
 
 	<section>
-		<h2>Sequence Retrieval Tool (SeqRet)</h2>
-		<p>This tool allows you to extract sequences by providing the corresponding identification information. This tool is built upon <a href="https://github.com/aubombarely/wwwfastacmd">wwwfastacmd project</a> developed by Aureliano Bombarely.</p>
+		<p>This tool allows you to extract sequences by providing the corresponding identification information.</p>
 		<?php
 		
 		// If an input error is detected (i.e. user input failed server-side validation
