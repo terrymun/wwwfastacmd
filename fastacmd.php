@@ -41,7 +41,7 @@
 		}
 
 		// Include form
-		include('seqret-form.php');
+		include('fastacmd-form.php');
 
 		?>
 	</section>
