@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 ## Set environment, where the BLAST programs are installed
-$ENV{PATH} = "/Applications/blast-2.2.25/bin:$ENV{PATH}";
+$ENV{PATH} = "/path/to/blast/bin:$ENV{PATH}";
 
 ## Use things
 use strict;
@@ -11,7 +11,7 @@ use File::Spec;
 
 ## Define variables
 my $cgi_o = CGI->new();
-my $db_root = "/Applications/MAMP/htdocs/blast/db";
+my $db_root = "/path/to/blast/db";
 my $err;
 my $out;
 
