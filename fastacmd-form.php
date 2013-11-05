@@ -9,11 +9,11 @@
 	<textarea id="seqret-id" type="text" name="id" rows="5" placeholder="Enter accession number or GI here"></textarea>
 	<small>Enter each accession number or GI on a new line./small>
 
-	<label for="seqret-from" class="col-one">Set subsequence</label>
+	<label for="seqret-from">Set subsequence</label>
 	<label for="seqret-from">Starting from</label><input type="number" id="seqret-from" name="from" placeholder="Start Position" min="0" />
 	<label for="seqret-to">to</label><input type="number" id="seqret-to" name="to" placeholder="End Position" min="0" />
 		
-	<label for="seqret-strand" class="col-one">Strand</label>
+	<label for="seqret-strand">Strand</label>
 	<select id="seqret-strand" name="st">
 		<option value="+">Manual: Plus or (+) or 1</option>
 		<option value="-">Manual: Minus or (-) or 2</option>
