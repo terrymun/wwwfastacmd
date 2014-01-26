@@ -35,9 +35,11 @@ You should note that there are no stylesheet provided. You can style the output 
 
 4. Add the list of databases that you want to include in your fastacmd in **fastacmd-form.php**, for example:
 
-        <select id="seqret-db" name="db">
-            <option value="[database_name.fa]">Database description</option>
-        </select>
+```html
+<select id="seqret-db" name="db">
+    <option value="[database_name.fa]">Database description</option>
+</select>
+```
 
    The database name should only contain the filename of the database file (typically in `.fa` - FASTA format). The absolute path to the databases are already handled in step 3.
 
