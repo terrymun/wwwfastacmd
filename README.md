@@ -35,11 +35,11 @@ You should note that there are no stylesheet provided. You can style the output 
 
 4. Add the list of databases that you want to include in your fastacmd in **fastacmd-form.php**, for example:
 
-```html
-<select id="seqret-db" name="db">
-    <option value="[database_name.fa]">Database description</option>
-</select>
-```
+        ```html
+        <select id="seqret-db" name="db">
+            <option value="[database_name.fa]">Database description</option>
+        </select>
+        ```
 
    The database name should only contain the filename of the database file (typically in `.fa` - FASTA format). The absolute path to the databases are already handled in step 3.
 
@@ -49,10 +49,10 @@ You should note that there are no stylesheet provided. You can style the output 
 
 7. You might want to allow `.cgi` files that not located within the root `cgi-bin` folder to be executed.
 
-```
-AddHandler cgi-script .cgi
-Options +ExecCGI
-```
+        ```
+        AddHandler cgi-script .cgi
+        Options +ExecCGI
+        ```
 
 8. Also, you might want to `chmod` the executable CGI files to `755` and beyond to allow the files to be executed.
 
