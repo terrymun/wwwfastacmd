@@ -14,7 +14,7 @@ This project relies on PHP, so ensure that you have it installed on your server.
 
 The files can be open, edited and saved with any text editing software out there, although I personally use [Sublime Text](http://www.sublimetext.com/) because of it's extensive support for syntax highlighting in various languages.
 
-I have been relying on the BLAST executables of [v2.2.25](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.25/), although NCBI hosts a publicly-accessible [FTP directory](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/) containing various versions of it. I would not expect to have major problems with newer versions (i.e. >2.2.25) of BLAST executables, although I have not tested this as of the time of writing.
+I have been relying on the (legacy) BLAST executables of [v2.2.26](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.26/), although NCBI hosts a publicly-accessible [FTP directory](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/) containing various versions of it. As this project uses a deprecated command, `fastacmd` to comb the database, I would not expect this script to work with binaries from **v2.2.30** and onwards.. I promise to look into using `blastdbcmd` instead in the near future.
 
 ## File list
 The following files are necessary for fastacmd to work:
@@ -29,7 +29,7 @@ You should note that there are no stylesheet provided. You can style the output 
 ## Installation instructions
 1. Download the files. You can place the files anywhere on your server.
 
-2. You will have to know where the BLAST executables are installed in your system. You will need the path to the blast executables, **/path/to/blast/bin** (for example: `/Applications/blast-2.2.25`, `/usr/bin/blast-2.2.25`), so that you can set the environment in the CGI script.
+2. You will have to know where the BLAST executables are installed in your system. You will need the path to the blast executables, **/path/to/blast/binaries** (for example: `/usr/bin/ncbi-blast-2.2.26/bin`), so that you can set the environment in the CGI script. Remember to download the correct BLAST binaries/executables for the appropriate OS.
 
 3. Update the `$db_root` variable in **fastacmd.cgi** so that it points to the directory where your BLAST databases can be found.
 
@@ -46,3 +46,15 @@ You should note that there are no stylesheet provided. You can style the output 
 5. Update the absolute path to **fastacmd.cgi** in **fastacmd-exec.php**. The absolute path is required by PHP `exec()` function to run the CGI file.
 
 6. You will also need to disable the **safe_mode** in PHP, or else the PHP `exec()` function will not work. Please contact your system/server administrator for more details.
+
+7. You might want to allow `.cgi` files that not located within the root `cgi-bin` folder to be executed.
+
+```
+AddHandler cgi-script .cgi
+Options +ExecCGI
+```
+
+8. Also, you might want to `chmod` the executable CGI files to `755` and beyond to allow the files to be executed.
+
+## In the wild
+[See this projet in action](http://users-mb.au.dk/pmgrp/tools/seqret.php) at *Lotus Base*, a genomic resource for the model organism *Lotus japonicus*.
